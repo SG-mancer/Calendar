@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 10px;
+}
+.grid{
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: 1fr 3fr;
+	grid-template-areas:
+	"header header" 
+	"countDown journal"
+	"calendar journal"
+	"links links";
+	background-color: #113983;
+}
+
+.header {
+	grid-area: header;
+	color: #7FBD32;
+        background-color: #091834;
+
+}
+
+.journal {
+	grid-area: journal;
+	background-color: #C2DEA1;
+}
+
+.countDown {
+	grida-area: countDown;
+	background-color: #448D76;
+}
+
+.calendar {
+	grid-area: calendar;
+	background-color: #E7F7D4;
+}
+
+.links {
+	grid-area: links;
+	color: #183E31;
+	background-color: #7FBD32;
+}
