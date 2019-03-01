@@ -3,6 +3,17 @@
 	padding: 10px;
 }
 
+
+
+:root{
+--light0: #E4F1F6; 
+--light1: #67AFCB;
+--dark0: #347B98;
+--dark1: #1A3E4C;
+--dark2: #092834;
+--darkest: #022B3B;
+}
+
 .grid{
 	display: grid;
 	grid-gap: 5px;
@@ -25,33 +36,37 @@
 	"countDown journal"
 	"calendar journal"
 	"links links";
-	background-color: #113983;
+	background-color: var(--darkest);
 }
 }
 .header {
 	grid-area: header;
-	color: #7FBD32;
-        background-color: #091834;
+	color: var(--dark2);
+        background-color: var(--light1);
 
 }
 
 .journal {
 	grid-area: journal;
-	background-color: #C2DEA1;
+	background-color: var(--light0);
 }
 
 .countDown {
 	grida-area: countDown;
-	background-color: #448D76;
+	background-color: var(--dark0);
 }
 
 .calendar {
 	grid-area: calendar;
-	background-color: #E7F7D4;
+	background-color: var(--light1);
 }
 
 .links {
 	grid-area: links;
-	color: #183E31;
-	background-color: #7FBD32;
+	color: var(--light0);
+	background-color: var(--dark1);
+}
+
+a:link, a:visited{
+	color: var(--light1);
 }
