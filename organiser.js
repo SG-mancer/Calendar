@@ -5,7 +5,7 @@ makeCal();
 function count100Days(){
    var dt1 = new Date(); //set two variables to compare.
    var dt0 = new Date();
-   dt0.setFullYear(2019, 2, 0); //Day 0 of 100 days of X
+   dt0.setFullYear(2019, 2, 0); //Day 0 of 100 days of X (is 28 Feb 2019)
    var dayCount = Math.floor((Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) - Date.UTC(dt0.getFullYear(), dt0.getMonth(), dt0.getDate()))/(1000*60*60*24));
 
    document.getElementById("daysCount").innerHTML = dayCount;
@@ -13,11 +13,47 @@ function count100Days(){
 
 
 function makeCal(){
+  //This function draws a calendar for the month.
+  
+  var d = new Date();
+  var n = d.getMonth()+1;
+  d.setFullYear(d.getFullYear(),n,0);
+  var xDays = d.getDate(); //xDays is the number of Days this month.
+  d.setFullYear(d.getFullYear(),n-1,1);
+  var aDay = d.getDay(); //aDay is the day of the week Month started on
+  d = new Date();
+  var tDay = d.getDate(); //tDay is the date today (ie 3rd day of month)
 
- var now = new Date();
- var firstDay = Date(now.getFullYear(), now.getMonth(), 1);
- var startingDay = firstDay.getDay();
 
- document.getElementById("simpleCal").innerHTML = firstDay;
+  //Writing the Top of the Calendar (days of week)
+  var tableCal = "<tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>";
+
+  //Looping through the days of month
+  //to get the calendar to align to days of the week the loop starts in neg.
+  var i;
+  var iDay = 0;
+
+  for (i =1-aDay; i <= xDays; i++){
+    if(iDay==0){
+      tableCal += "<tr>";
+    }
+
+    tableCal += "<td>";
+    if(i>0){ 
+      tableCal += i.toString();
+    }
+    if(i==tDay){     //put a mark next to today on calendar.
+      tableCal += "!";
+    }
+    tableCal += "</td>";
+
+    if(iDay==6){
+      tableCal += "</tr>";
+      iDay = -1;
+    }
+    iDay++;
+  }
+
+  document.getElementById("simpleCal").innerHTML = tableCal;
 
 }
