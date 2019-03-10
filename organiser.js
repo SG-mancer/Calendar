@@ -14,7 +14,7 @@ function count100Days(){
 
 function makeCal(){
   //This function draws a calendar for the month.
-  
+
   var d = new Date();
   var n = d.getMonth()+1;
   d.setFullYear(d.getFullYear(),n,0);
@@ -34,20 +34,26 @@ function makeCal(){
   var iDay = 0;
 
   for (i =1-aDay; i <= xDays; i++){
-    if(iDay==0){
+
+    if(iDay==0){	//each sunday, start a new row.
       tableCal += "<tr>";
     }
 
     tableCal += "<td>";
-    if(i>0){ 
+    if(i==tDay){     //put a mark next to today on calendar.
+      tableCal += "<div class=\"today\">";
+    }
+
+    if(i>0){	//negative days are last month, and get no number
       tableCal += i.toString();
     }
+
     if(i==tDay){     //put a mark next to today on calendar.
-      tableCal += "!";
+      tableCal += "</div>";
     }
     tableCal += "</td>";
 
-    if(iDay==6){
+    if(iDay==6 || iDay==xDays){	//each saturday or last day of month close row
       tableCal += "</tr>";
       iDay = -1;
     }
@@ -57,3 +63,4 @@ function makeCal(){
   document.getElementById("simpleCal").innerHTML = tableCal;
 
 }
+

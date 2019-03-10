@@ -59,12 +59,18 @@
 .calendar {
 	grid-area: calendar;
 	background-color: var(--light1);
+	font-size:small;
 }
 
 .links {
 	grid-area: links;
 	color: var(--light0);
 	background-color: var(--dark1);
+}
+
+.today {
+	background-color: red;
+	color: black;
 }
 
 a:link, a:visited{
