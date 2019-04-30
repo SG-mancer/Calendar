@@ -66,7 +66,7 @@ function makeCal(){
 
 
   //Writing the Top of the Calendar (days of week)
-  var tableCal =  "<h2>" + tMon + "</h2>";
+  var tableCal =  "<caption>" + tMon + "</caption>";
   tableCal += "<tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>";
 
   //Looping through the days of month

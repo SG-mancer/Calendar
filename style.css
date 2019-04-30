@@ -4,14 +4,14 @@
 }
 
 
-
+/* 6 colours in the set */
 :root{
---light0: #E4F1F6; 
---light1: #67AFCB;
---dark0: #347B98;
---dark1: #1A3E4C;
---dark2: #092834;
---darkest: #022B3B;
+--light0: #E4F1F6; /*main pane .journal*/ 
+--light1: #67AFCB; /*heading&calendar panes .header*/
+--dark0: #347B98; /*top left pane .countdown*/
+--dark1: #1A3E4C; /*bottom pane .links*/
+--dark2: #092834; /*heading-text*/
+--darkest: #022B3B; /*background (behind grid)*/
 }
 
 .grid{
@@ -59,7 +59,8 @@
 .calendar {
 	grid-area: calendar;
 	background-color: var(--light1);
-	font-size:small;
+	font-size: small;
+        text-align: center;
 }
 
 .links {
@@ -69,8 +70,9 @@
 }
 
 .today {
-	background-color: red;
-	color: black;
+	background-color: var(--dark2);
+	color: var(--light0);
+        font-size: small;
 }
 
 a:link, a:visited{
