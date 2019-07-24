@@ -6,12 +6,12 @@
 
 /* 6 colours in the set */
 :root{
---light0: #E4F1F6; /*main pane .journal*/ 
---light1: #67AFCB; /*heading&calendar panes .header*/
---dark0: #347B98; /*top left pane .countdown*/
---dark1: #1A3E4C; /*bottom pane .links*/
---dark2: #092834; /*heading-text*/
---darkest: #022B3B; /*background (behind grid)*/
+--light0: #FEEEDC; /*main pane .journal*/ 
+--light1: #FDB768; /*heading&calendar panes .header*/
+--dark0: #975102; /*top left pane .countdown*/
+--dark1: #4E300E; /*bottom pane .links*/
+--dark2: #FB8604; /*heading-text*/
+--darkest: #FFFFFF; /*background (behind grid)*/
 }
 
 .grid{
